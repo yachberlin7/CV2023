@@ -49,11 +49,17 @@ span
 line-height: inherit;
 }
 /*2 Entête*/
-header
-{
-  margin: 10px 10px 0 10px;
-  width:1200px;
-  height: 300px;
+@keyframes slideHigher  {
+  0% { transform: scale(0.5); }
+  100% { transform: scale(1.05); }
+}
+@keyframes wheelHueColor {
+  from, to { color: black; }
+    0%      { color: hsl(180, 75%, 35%); }
+  25%     { color: hsl(216, 60%, 45%); }
+  50%      { color: hsl(252, 65%, 50%); }
+  75%      { color: hsl(288, 60%, 40%); }
+  100%     { color: black; }
 }
 
 /*3 Colonne gauche*/
@@ -120,7 +126,7 @@ ol
 }
 section
 {
-  margin: 35px 15px 015px 35px;  
+  margin: 35px 15px 15px 25px;  
 }
 hr:after 
 {
@@ -135,45 +141,108 @@ dt
 /*5 Responsive Media queries*/
 /*adaptation pour les changements de taille entre deux valeurs*/
 /* Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) and (max-width: 767.98px)
+@media (min-width: 320px) and (max-width: 576px)
  {
+    header
+  { 
+    margin: 10px 10px 0 10px;
+    width:98%;
+    height: 300px;
+  }
   .img-responsive
   {
     display: block;
     height: auto;
     border-radius: 50%;
-    max-width: 100%;
+    max-width: 98%;
+    border :1px black solid;
   } 
   .col_left 
   {
-     width: 100%;
+     width: 98%;
   }
   section
   {
-    width: 100%;
+    width: 98%;
   }
-} 
+  .animation {
+    width: 100%; /* Ajustez la largeur selon vos besoins */
+    height: 200px; /* Ajustez la hauteur selon vos besoins */
+    position: relative;
+    overflow: hidden;
+    animation: slideHigher 25s ;
+  }
+  h1,h5{
+    animation: wheelHueColor 50s infinite ;
+  } 
+  
+  }
 
-/* Medium devices (tablets, 768px and up)*/
-@media (min-width: 768px)and (max-width: 991.98px) 
+/* Medium devices (tablets, 576px and up)*/
+@media (min-width: 576px)and (max-width: 1024px) 
 { 
+  #entete{
+    margin-top: 15px;
+  }
+  header
+  {
+    margin: 20px;
+    width:100%;
+    height: 300px;
+    
+  }
   .img-responsive
   {
     display: block;
     max-width: 100%;
     border-radius: 50%;
     border :3px black solid;
-    max-width: 100%;
+    margin-top: -75px;
+    animation: slideHigher 25s;
    }
   .col_left
   {
-      width: 100%;
+      width: 98%;
+      
+      text-align: center;
+      
   }
+  aside h2
+    {
+      background-color:#424242;
+      text-align: center;
+      color: #ffffbb;
+      margin: 0 -45px 19px -55px;
+    }
+    aside
+    {
+      margin: 25px 10px 25px 10px;
+      text-align: left;
+    }  
+    .animation{
+    width: 100%; /* Ajustez la largeur selon vos besoins */
+    height: 200px; /* Ajustez la hauteur selon vos besoins */
+    position: relative;
+    overflow: hidden;
+    margin: 15px;
+    margin-top: 45px;
+    animation : slideHigher 25s ;
+    }
+ 
+    h1,h5{
+      animation: wheelHueColor 50s infinite ;
+    }
+
 }
 
 /* Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) and (max-width: 1199.98px)
-{ 
+@media (min-width: 1024px) {
+  header
+  {
+    margin: 10px 10px 0 10px;
+    width:100%;
+    height: 300px;
+  }
   .img-responsive
   {
     display: block;
@@ -191,11 +260,30 @@ dt
     height: 100%;
     width: 100%;
   }
+  .animation{
+    width: 100%; /* Ajustez la largeur selon vos besoins */
+    height: 200px; /* Ajustez la hauteur selon vos besoins */
+    position: relative;
+    overflow: hidden;
+    margin: 15px;
+    margin-top: 45px;
+    animation : slideHigher 25s ;
+    }
+ 
+    h1,h5{
+      animation: wheelHueColor 50s infinite ;
+    }
 }
 
 /* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px)
 { 
+  header
+  {
+    margin: 10px 10px 0 10px;
+    width:98%;
+    height: 300px;
+  }
   .img-responsive
   {
     display: block;
@@ -214,4 +302,17 @@ dt
     height: 100%;
     width: 100%;
   }
+  .animation{
+    width: 100%; /* Ajustez la largeur selon vos besoins */
+    height: 200px; /* Ajustez la hauteur selon vos besoins */
+    position: relative;
+    overflow: hidden;
+    margin: 15px;
+    margin-top: 45px;
+    animation : slideHigher 25s ;
+    }
+ 
+    h1,h5{
+      animation: wheelHueColor 50s infinite ;
+    }
 }
